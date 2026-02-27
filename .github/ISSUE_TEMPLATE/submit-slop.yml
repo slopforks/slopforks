@@ -1,0 +1,80 @@
+name: Submit Slop
+description: Add your AI-built fork to the leaderboard
+title: "[Submit] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit your slop fork to the leaderboard. We'll verify it and add it to the list.
+
+        **Requirements:**
+        - Must be a fork or reimplementation of an existing open-source project
+        - Must be built primarily with AI (Claude, Copilot, GPT, etc.)
+
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      placeholder: e.g. vinext
+    validations:
+      required: true
+
+  - type: input
+    id: fork_repo
+    attributes:
+      label: Your fork (GitHub repo)
+      description: The full org/repo path
+      placeholder: e.g. cloudflare/vinext
+    validations:
+      required: true
+
+  - type: input
+    id: original_repo
+    attributes:
+      label: Original project (GitHub repo)
+      description: The repo you forked or reimplemented
+      placeholder: e.g. vercel/next.js
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: One-line description
+      placeholder: e.g. Next.js API surface reimplemented on Vite — built in one week with Claude Code
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Primary language
+      placeholder: e.g. TypeScript
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fork_type
+    attributes:
+      label: How is this a fork?
+      options:
+        - Actual GitHub fork (shows "forked from" on GitHub)
+        - Detached fork (codebase derived from original, no GitHub link)
+        - Ground-up reimplementation of the original's API/functionality
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai_evidence
+    attributes:
+      label: Evidence it was built with AI
+      description: |
+        How do we know this was built with AI? Examples:
+        - Has CLAUDE.md or AGENTS.md in repo
+        - README says "built with Claude/Copilot/GPT"
+        - @claude or @copilot listed as contributor
+        - Other evidence
+      placeholder: Has CLAUDE.md and AGENTS.md. README states "vast majority of code written by AI (Claude Code)"
+    validations:
+      required: true

@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Definition from "../components/Definition";
+import Leaderboard from "../components/Leaderboard";
+import StickyHeader from "../components/StickyHeader";
+---
+
+<Layout>
+  <StickyHeader client:load />
+  <main>
+    <div id="hero">
+      <Definition client:load />
+    </div>
+    <div id="hero-end" aria-hidden="true"></div>
+    <Leaderboard client:load />
+  </main>
+</Layout>
