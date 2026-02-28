@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "npm run build && wrangler dev",
+    "astro": "astro",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/react": "^4.4.2",
     "@cloudflare/kumo": "^1.9.0",
     "@phosphor-icons/react": "^2.1.10",
@@ -19,5 +22,8 @@
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.69.0"
   }
 }
