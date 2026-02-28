@@ -94,7 +94,7 @@ export default function Leaderboard() {
       </LayerCard>
 
       {/* CTA card */}
-      <Surface className="mt-10 flex items-center justify-between rounded-lg p-6">
+      <Surface className="mt-10 flex flex-col gap-4 rounded-lg p-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <Text variant="heading3" as="p">
             Have your own slop?
